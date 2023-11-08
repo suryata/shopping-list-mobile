@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// Impor drawer widget
+import 'package:shopping_list/widgets/left_drawer.dart';
 
 class ShopItem {
   final String name;
@@ -61,6 +63,7 @@ class MyHomePage extends StatelessWidget {
           ),
         ),
       ),
+      drawer: const LeftDrawer(),
     );
   }
 }
@@ -82,6 +85,9 @@ class ShopCard extends StatelessWidget {
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(
                 content: Text("Kamu telah menekan tombol ${item.name}!")));
+          if (item.name == "Tambah Produk") {
+            // TODO: Gunakan Navigator.push untuk melakukan navigasi ke MaterialPageRoute yang mencakup ShopFormPage.
+          }
         },
         child: Container(
           // Container untuk menyimpan Icon dan Text
